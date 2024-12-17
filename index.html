@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./custom-cursors.css">
   <title>Simple Drawing App</title>
   <style>
     canvas {
@@ -17,10 +18,12 @@
   </style>
 </head>
 <body>
+  <div draggable="false" id="paintbrush-cursor"></div>
   <canvas id="canvas" width="600" height="400"></canvas>
   <button id="eraser">Switch to Eraser</button>
   <button id="btn">Clear Canvas</button>
 
-  <script src="script.js"></script>
+  <script defer src="./script.js"></script>
+  <script defer src="./custom-cursor-control.js"></script>
 </body>
 </html>

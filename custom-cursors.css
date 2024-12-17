@@ -1,0 +1,17 @@
+/*Hides the cursor, so custom ones can be used*/
+* {
+    cursor: none;
+}
+
+/*Makes the paintbrush custom cursor*/
+#paintbrush-cursor {
+    width: 5px;
+    height: 5px;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /*Makes the element not react to events like dragging*/
+    pointer-events: none;
+}
