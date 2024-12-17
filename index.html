@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--"./" Gets the sibling files. The ones in the same folder-->
   <link rel="stylesheet" href="./custom-cursors.css">
+  <link rel="stylesheet" href="./display-messages.css">
   <title>Simple Drawing App</title>
   <style>
     canvas {
@@ -18,11 +20,20 @@
   </style>
 </head>
 <body>
-  <div draggable="false" id="paintbrush-cursor"></div>
-  <canvas id="canvas" width="600" height="400"></canvas>
-  <button id="eraser">Switch to Eraser</button>
-  <button id="btn">Clear Canvas</button>
 
+  <div id="clearing-canvas-display">Clearing canvas</div>
+
+  <!--Custom brush cursor-->
+  <div draggable="false" id="paintbrush-cursor"></div>
+  
+  <!--Drawing canvas-->
+  <canvas id="canvas" width="600" height="400"></canvas>
+
+  <!--Options-->
+  <button id="eraser">Switch to Eraser</button>
+  <button id="clear-canvas-button">Clear Canvas</button>
+
+  <!--Scripts-->
   <script defer src="./script.js"></script>
   <script defer src="./custom-cursor-control.js"></script>
 </body>
