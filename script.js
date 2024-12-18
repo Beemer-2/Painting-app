@@ -12,8 +12,10 @@ let isErasing = false;
 eraseBtn.addEventListener("click", () => {
     isErasing = !isErasing; // Toggle erasing mode
     if (isErasing) {
+        customCursor.src = "./Rubber on Pencil.png";
         eraseBtn.textContent = "Switch to Drawing"; // Update button text
     } else {
+        customCursor.src = "./Paint Brush.png"
         eraseBtn.textContent = "Switch to Eraser";
     }
 });
