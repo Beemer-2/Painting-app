@@ -8,6 +8,7 @@ let ctx = canvas.getContext("2d");
 // mouse move, mouse down, mouseup;
 let isDrawing = false;
 let isErasing = false;
+let color = "#000000";
 
 eraseBtn.addEventListener("click", () => {
     isErasing = !isErasing; // Toggle erasing mode
@@ -34,7 +35,7 @@ canvas.addEventListener("mousemove", (e) => {
         ctx.clearRect(e.offsetX, e.offsetY, 20, 20); // Eraser size 20x20
     } else {
         ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.strokeStyle = 'red';
+        ctx.strokeStyle = color;
         ctx.stroke();
         }
     }
@@ -69,5 +70,17 @@ clearCanvasButton.addEventListener("click", () => {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clears the whole canvas
     }
+});
+
+
+let colorInput = document.querySelector("#color-input");
+
+//Runs every time a value is inputted into the color input field
+colorInput.addEventListener("input", () => {
+
+    console.log(colorInput.value);
+
+    //Sets color to the new color value, so next time a line is drawn, the new color is used
+    color = colorInput.value;
 });
 

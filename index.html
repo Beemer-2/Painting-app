@@ -13,14 +13,14 @@
       display: block;
       margin: 20px auto;
     }
-    button {
+    button, input {
       display: block;
       margin: 10px auto;
     }
   </style>
 </head>
 <body>
-
+  <!--Displays (Hidden by default)-->
   <div id="clearing-canvas-display">Clearing canvas</div>
 
   <!--Custom brush cursor-->
@@ -32,6 +32,7 @@
   <!--Options-->
   <button id="eraser">Switch to Eraser</button>
   <button id="clear-canvas-button">Clear Canvas</button>
+  <input id="color-input" type="color">
 
   <!--Scripts-->
   <script defer src="./script.js"></script>
