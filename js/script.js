@@ -12,13 +12,13 @@ let isErasing = false;
 let color = "#000000";
 
 eraseBtn.addEventListener("click", () => {
-    customCursor.src = "./Rubber on Pencil.png";
+    customCursor.src = "./assets/pencil-rubber.png";
     isErasing = true;
     //eraseBtn.textContent = "Eraser (enabled)";
 });
 
 drawBtn.addEventListener("click", () => {
-    customCursor.src = "./Paint Brush.png";
+    customCursor.src = "./assets/paint-brush.png";
     isErasing = false;
     //drawBtn.textContent = "Drawing (enabled)";
 });
@@ -88,8 +88,12 @@ colorInput.addEventListener("input", () => {
 
 
 function downloadImage(image) {
+    //Creates an "a" tag to be used to download the image
     var link = document.createElement('a');
+    //Sets the download name
     link.download = "MyDrawing";
-    link.href = canvas.toDataURL()
+    //Sets up the download link
+    link.href = canvas.toDataURL();
+    //Clicks said link to download it
     link.click();
 }
