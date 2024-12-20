@@ -6,6 +6,7 @@
   <!--"./" Gets the sibling files. The ones in the same folder-->
   <link rel="stylesheet" href="./css/custom-cursors.css">
   <link rel="stylesheet" href="./css/display-messages.css">
+  <link rel="stylesheet" href="./css/main.css">
   <title>Simple Drawing App</title>
   <style>
     canvas {
@@ -13,7 +14,7 @@
       display: block;
       margin: 20px auto;
     }
-    button, input {
+    button, input, label {
       display: block;
       margin: 10px auto;
     }
@@ -31,7 +32,12 @@
 
   <!--Options-->
   <button id="eraser">Eraser</button>
+  <label for="eraser-size">Eraser size</label>
+  <input type="range" min="1" max="200" value="20" id="eraser-size">
   <button id="draw">Drawing</button>
+  <label for="brush-size">Brush size</label>
+  <input type="range" min="1" max="100" value="1" id="brush-size">
+  <button onclick="fillCanvas()" id="fill">Fill</button>
   <button id="clear-canvas-button">Clear Canvas</button>
   <button id="download-image-button" onclick="downloadImage(document.querySelector('#canvas'))">Download image</button>
   <input id="color-input" type="color">

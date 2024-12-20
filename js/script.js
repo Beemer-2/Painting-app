@@ -11,6 +11,9 @@ let isDrawing = false;
 let isErasing = false;
 let color = "#000000";
 
+//Initialises the eraser size
+let eraserSizeValue = 20;
+
 eraseBtn.addEventListener("click", () => {
     customCursor.src = "./assets/pencil-rubber.png";
     isErasing = true;
@@ -34,7 +37,7 @@ canvas.addEventListener("mousedown", (e) => {
 canvas.addEventListener("mousemove", (e) => {
  if (isDrawing) {
     if (isErasing) {
-        ctx.clearRect(e.offsetX, e.offsetY, 20, 20); // Eraser size 20x20
+        ctx.clearRect(e.offsetX, e.offsetY, eraserSizeValue, eraserSizeValue); // Sets the eraser size. Default is 20x20
     } else {
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.strokeStyle = color;
@@ -86,6 +89,12 @@ colorInput.addEventListener("input", () => {
     color = colorInput.value;
 });
 
+//TODO: Make this work
+function fillCanvas() {
+    console.log("a")
+    ctx.fill();
+}
+
 
 function downloadImage(image) {
     //Creates an "a" tag to be used to download the image
@@ -97,3 +106,15 @@ function downloadImage(image) {
     //Clicks said link to download it
     link.click();
 }
+
+//Changes the brush size based on a slider input
+let brushSizeInput = document.getElementById("brush-size");
+brushSizeInput.addEventListener("input", () => {
+    ctx.lineWidth = brushSizeInput.value;
+});
+
+
+let eraserSize = document.getElementById("eraser-size");
+eraserSize.addEventListener("input", () => {
+    eraserSizeValue = eraserSize.value;
+;})
