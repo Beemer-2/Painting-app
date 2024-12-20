@@ -3,6 +3,7 @@
 
 let canvas = document.querySelector("#canvas");
 let eraseBtn = document.querySelector("#eraser");
+let drawBtn = document.querySelector("#draw")
 let ctx = canvas.getContext("2d");
 
 // mouse move, mouse down, mouseup;
@@ -11,14 +12,15 @@ let isErasing = false;
 let color = "#000000";
 
 eraseBtn.addEventListener("click", () => {
-    isErasing = !isErasing; // Toggle erasing mode
-    if (isErasing) {
-        customCursor.src = "./Rubber on Pencil.png";
-        eraseBtn.textContent = "Switch to Drawing"; // Update button text
-    } else {
-        customCursor.src = "./Paint Brush.png"
-        eraseBtn.textContent = "Switch to Eraser";
-    }
+    customCursor.src = "./Rubber on Pencil.png";
+    isErasing = true;
+    //eraseBtn.textContent = "Eraser (enabled)";
+});
+
+drawBtn.addEventListener("click", () => {
+    customCursor.src = "./Paint Brush.png";
+    isErasing = false;
+    //drawBtn.textContent = "Drawing (enabled)";
 });
 
 //Checks if the mouse is held down. If it is, the drawing starts
@@ -84,3 +86,10 @@ colorInput.addEventListener("input", () => {
     color = colorInput.value;
 });
 
+
+function downloadImage(image) {
+    var link = document.createElement('a');
+    link.download = "MyDrawing";
+    link.href = canvas.toDataURL()
+    link.click();
+}
