@@ -1,5 +1,6 @@
 let canvas = document.querySelector("#canvas");
 let eraseBtn = document.querySelector("#eraser");
+let textBtn = document.querySelector("#text-btn")
 let ctx = canvas.getContext("2d");
 // mouse move, mouse down, mouseup;
 let isDrawing = false;
@@ -35,3 +36,4 @@ let btn = document.querySelector("#btn");
 btn.addEventListener("click", () => {
  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
 });
+
